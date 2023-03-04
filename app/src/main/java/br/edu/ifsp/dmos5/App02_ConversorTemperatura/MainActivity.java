@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         }
     }
-
+////
     private double getValue(){
 
         double value;
