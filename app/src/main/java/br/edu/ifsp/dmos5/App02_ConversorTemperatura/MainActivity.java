@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
     private TextView convertedValueTextView;
     private Button converterCelsiusButton ;
     private Button converterFahrenheitButton;
+    private Button converterKelvinButton;
 
 
 
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         converterFahrenheitButton = findViewById(R.id.button_converter_Fahrenheit);
         converterFahrenheitButton.setOnClickListener(this);
 
+        converterKelvinButton = findViewById(R.id.button_converter_Kelvin);
+        converterKelvinButton.setOnClickListener(this);
+
     }
 
     public void onClick(View view){
@@ -45,7 +49,11 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         if(view == converterFahrenheitButton){
             getTemperaturaFahrenheit();
         }
+        if(view == converterKelvinButton){
 
+            getTemperaturaKelvin();
+
+        }
     }
 
     private double getValue(){
@@ -90,4 +98,11 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
     }
 
+    private void getTemperaturaKelvin(){
+
+        double value = getValue();
+        value = value-273;
+
+        convertedValueTextView.setText(String.format("%2.f K",value));
+    }
 }
